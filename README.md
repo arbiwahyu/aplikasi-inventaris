@@ -28,7 +28,7 @@ Aplikasi ini adalah sistem manajemen inventaris berbasis web yang dirancang untu
 
 <table>
   <tr>
-    <td align="center"><a href="https://laravel.com/" target="_blank"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ALaravel.svg&psig=AOvVaw3M4KBJfDAiOD6MxV2W5ESs&ust=1753631924857000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKigoKjy2o4DFQAAAAAdAAAAABAE" alt="laravel" width="40" height="40"/></a><br>Laravel</td>
+    <td align="center"><a href="https://laravel.com/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="laravel" width="40" height="40"/></a><br>Laravel</td>
     <td align="center"><a href="https://tailwindcss.com/" target="_blank"><img src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.d52e9897.svg" alt="tailwind" width="40" height="40"/></a><br>Tailwind CSS</td>
     <td align="center"><a href="https://www.mysql.com/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/></a><br>MySQL</td>
     <td align="center"><a href="https://vitejs.dev" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="vite" width="40" height="40"/></a><br>Vite</td>
