@@ -1,66 +1,114 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Aplikasi Web Manajemen Inventaris
+
+![Screenshot Aplikasi](URL_SCREENSHOT_ANDA)
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel" alt="Laravel 12">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS 4">
+  <img src="https://img.shields.io/badge/MySQL-8-4479A1?style=for-the-badge&logo=mysql" alt="MySQL 8">
 </p>
 
-## About Laravel
+Aplikasi ini adalah sistem manajemen inventaris berbasis web yang dirancang untuk membantu perusahaan dalam mengelola, melacak, dan memonitor aset atau barang inventaris secara efisien. Dibangun dengan tumpukan teknologi modern, aplikasi ini menawarkan antarmuka yang bersih dan fungsionalitas yang lengkap untuk keperluan internal.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## **✨ Fitur Utama**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* **Manajemen Data Master (CRUD):** Mengelola data Barang, Lokasi, dan Kategori secara penuh.
+* **Pelacakan Barang Detail:** Setiap barang memiliki atribut lengkap seperti kode unik, tanggal beli, kondisi, dan gambar.
+* **Sistem Peminjaman & Pengembalian:** Fitur untuk meminjam dan mengembalikan barang, dengan status yang otomatis ter-update.
+* **Cetak Label & QR Code:** Menghasilkan label dengan QR Code yang unik untuk setiap barang agar mudah diidentifikasi.
+* **Laporan Fleksibel:** Filter laporan barang berdasarkan Lokasi dan rentang Tanggal Pembelian.
+* **Pengecekan Ketersediaan:** Melihat daftar barang yang tersedia pada tanggal tertentu di masa depan untuk membantu perencanaan.
+* **Manajemen Pengguna:** Sistem otentikasi (login & register) untuk banyak pengguna.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## **🛠️ Teknologi yang Digunakan**
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<table>
+  <tr>
+    <td align="center"><a href="https://laravel.com/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/laravel/laravel-plain.svg" alt="laravel" width="40" height="40"/></a><br>Laravel</td>
+    <td align="center"><a href="https://tailwindcss.com/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original-wordmark.svg" alt="tailwind" width="40" height="40"/></a><br>Tailwind CSS</td>
+    <td align="center"><a href="https://www.mysql.com/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/></a><br>MySQL</td>
+    <td align="center"><a href="https://vitejs.dev" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="vite" width="40" height="40"/></a><br>Vite</td>
+    <td align="center"><a href="https://www.php.net" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40"/></a><br>PHP</td>
+  </tr>
+</table>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## **🚀 Instalasi & Menjalankan Proyek**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Berikut adalah cara untuk menjalankan proyek ini di lingkungan lokal Anda.
 
-### Premium Partners
+**Prasyarat:**
+* PHP (versi 8.2 atau lebih tinggi)
+* Composer
+* Node.js & NPM
+* Database MySQL
+* Lingkungan lokal seperti Laragon (direkomendasikan)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+**Langkah-langkah:**
 
-## Contributing
+1.  **Clone repository ini:**
+    ```bash
+    git clone [https://github.com/NAMA_USER_ANDA/NAMA_REPO_ANDA.git](https://github.com/NAMA_USER_ANDA/NAMA_REPO_ANDA.git)
+    ```
+    2.  **Masuk ke direktori proyek:**
+    ```bash
+    cd nama-direktori-proyek
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3.  **Install dependensi PHP:**
+    ```bash
+    composer install
+    ```
 
-## Code of Conduct
+4.  **Salin file environment:**
+    ```bash
+    cp .env.example .env
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5.  **Generate application key:**
+    ```bash
+    php artisan key:generate
+    ```
 
-## Security Vulnerabilities
+6.  **Konfigurasi file `.env`:**
+    Buka file `.env` dan sesuaikan koneksi database Anda (DB_DATABASE, DB_USERNAME, DB_PASSWORD).
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=aplikasi_inventaris
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+7.  **Jalankan migrasi database:**
+    ```bash
+    php artisan migrate
+    ```
 
-## License
+8.  **Buat symbolic link untuk storage:**
+    ```bash
+    php artisan storage:link
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+9.  **Install dependensi JavaScript:**
+    ```bash
+    npm install
+    ```
+
+10. **Jalankan Vite development server:**
+    ```bash
+    npm run dev
+    ```
+
+11. Buka tab terminal baru dan jalankan server Laravel (jika tidak menggunakan Laragon):
+    ```bash
+    php artisan serve
+    ```
+
+Aplikasi sekarang dapat diakses di `http://localhost:8000` atau URL dari Laragon Anda.
