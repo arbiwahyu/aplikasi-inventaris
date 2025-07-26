@@ -78,12 +78,12 @@ Berikut adalah cara untuk menjalankan proyek ini di lingkungan lokal Anda.
 6.  **Konfigurasi file `.env`:**
     Buka file `.env` dan sesuaikan koneksi database Anda (DB_DATABASE, DB_USERNAME, DB_PASSWORD).
     ```env
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=aplikasi_inventaris
-    DB_USERNAME=root
-    DB_PASSWORD=
+    DB_CONNECTION=""
+    DB_HOST=""
+    DB_PORT=""
+    DB_DATABASE=""
+    DB_USERNAME=""
+    DB_PASSWORD=""
     ```
 
 7.  **Jalankan migrasi database:**
