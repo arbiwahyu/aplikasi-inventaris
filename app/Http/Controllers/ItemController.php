@@ -9,6 +9,11 @@ use App\Models\Borrowing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ItemsExport;
+use App\Imports\ItemsImport;
+use App\Exports\ItemFormatExport;
+use Illuminate\Database\QueryException;
 
 class ItemController extends Controller
 {
@@ -125,11 +130,11 @@ class ItemController extends Controller
     public function destroy(Item $item)
     {
         //
-        // Hapus gambar dari storage jika ada
-        if ($item->image) {
-            $path = str_replace('/storage', 'public', $item->image);
-            Storage::delete($path);
-        }
+        // // Hapus gambar dari storage jika ada
+        // if ($item->image) {
+        //     $path = str_replace('/storage', 'public', $item->image);
+        //     Storage::delete($path);
+        // }
 
         // Hapus data dari database
         $item->delete();
@@ -185,5 +190,42 @@ class ItemController extends Controller
     public function printLabel(Item $item)
     {
         return view('items.label', compact('item'));
+    }
+
+    public function export()
+    {
+        return Excel::download(new ItemsExport, 'daftar-barang.xlsx');
+    }
+
+    public function import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls',
+        ]);
+
+        try {
+            Excel::import(new ItemsImport, $request->file('file'));
+        } catch (\Maatwebsite\Excel\Validators\ValidationException $e) {
+            // Ini menangani error validasi dari package (misal: kolom wajib kosong)
+            $failures = $e->failures();
+            return redirect()->route('items.index')->with('import_errors', $failures);
+        } catch (QueryException $e) {
+            // Ini menangani error langsung dari database (seperti duplikasi)
+            $errorCode = $e->errorInfo[1];
+            if ($errorCode == 1062) { // Kode 1062 adalah error spesifik untuk 'Duplicate entry'
+                return redirect()->route('items.index')
+                    ->with('error', 'Import Gagal! Terdapat duplikasi Kode Barang di dalam file Excel Anda atau kode tersebut sudah ada di sistem.');
+            }
+            // Untuk error database lainnya
+            return redirect()->route('items.index')
+                ->with('error', 'Import Gagal! Terjadi kesalahan pada database. Harap Cek Kembali File Import. Pastikan tidak ada kolom yang belum terisi');
+        }
+
+        return redirect()->route('items.index')->with('success', 'Data barang berhasil diimpor!');
+    }
+
+    public function downloadFormat()
+    {
+        return Excel::download(new ItemFormatExport, 'format-import-barang.xlsx');
     }
 }

@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                        <img src="{{ asset('images/logo-aplikasi.svg') }}" class="block h-9 w-auto" alt="Logo Aplikasi">
                     </a>
                 </div>
 
@@ -15,21 +15,38 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('locations.index')" :active="request()->routeIs('locations.index')">
-                        {{ __('Lokasi') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.*')">
-                        {{ __('Kategori') }}
-                    </x-nav-link>
+
+                    {{-- Menu ini bisa dilihat semua peran yang login --}}
                     <x-nav-link :href="route('items.index')" :active="request()->routeIs('items.*')">
-                        {{ __('Barang') }}
+                        {{ __('Daftar Barang') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('reports.items')" :active="request()->routeIs('reports.items')">
-                        {{ __('Laporan') }}
-                    </x-nav-link>
+
+                    {{-- Bungkus menu manajemen dengan @can --}}
+                    @can('manage items')
+                        <x-nav-link :href="route('locations.index')" :active="request()->routeIs('locations.*')">
+                            {{ __('Lokasi') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.*')">
+                            {{ __('Kategori') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('reports.items')" :active="request()->routeIs('reports.items')">
+                            {{ __('Laporan') }}
+                        </x-nav-link>
+                    @endcan
+
+                    {{-- Menu ini bisa dilihat semua peran yang login --}}
                     <x-nav-link :href="route('reports.availability')" :active="request()->routeIs('reports.availability')">
                         {{ __('Cek Ketersediaan') }}
                     </x-nav-link>
+
+                    @role('Admin')
+                        <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                            {{ __('Manajemen User') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('activity-log.index')" :active="request()->routeIs('activity-log.index')">
+                            {{ __('Log Aktivitas') }}
+                        </x-nav-link>
+                    @endrole
                 </div>
             </div>
 

@@ -3,12 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\LogOptions;
+use Illuminate\Support\Facades\Storage;
 
 class Item extends Model
 {
     //
     // app/Models/Item.php
-
+    use HasFactory, LogsActivity;
     //... (di dalam class Item)
     protected $fillable = [
         'category_id',
@@ -42,5 +46,23 @@ class Item extends Model
     public function borrowings()
     {
         return $this->hasMany(Borrowing::class);
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->logOnly(['name', 'location.name', 'category.name', 'status', 'condition']) // Catat perubahan pada kolom-kolom ini saja
+            ->logOnlyDirty() // Hanya catat jika ada perubahan
+            ->setDescriptionForEvent(fn(string $eventName) => "Barang {$this->name} telah di-{$eventName}"); // Deskripsi log
+    }
+
+    protected static function booted(): void
+    {
+        static::deleting(function (Item $item) {
+            // Hapus file gambar dari storage jika ada
+            if ($item->image) {
+                Storage::disk('public')->delete($item->image);
+            }
+        });
     }
 }

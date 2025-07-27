@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Browser Highlight Color */
+::selection {
+  background-color: #3b82f6; /* Warna biru yang sama dengan tombol */
+  color: #ffffff; /* Warna teks menjadi putih */
+}
